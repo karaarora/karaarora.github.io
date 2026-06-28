@@ -30,7 +30,6 @@ function BoardContent() {
   const { color, setColor } = useWallColor();
 
   const [resetCount,    setResetCount]    = useState(0);
-  const [monitorSrc,    setMonitorSrc]    = useState<string | undefined>(undefined);
   const [colorCharmPos, setColorCharmPos] = useLocalStorage("pegboard-color-pos",   DEFAULTS.colorCharm);
   const [asanaCharmPos,   setAsanaCharmPos]   = useLocalStorage("pegboard-asana-pos",    DEFAULTS.asanaCharm);
   const [expediaCharmPos, setExpediaCharmPos] = useLocalStorage("pegboard-expedia-pos",  DEFAULTS.expediaCharm);
@@ -227,7 +226,7 @@ function BoardContent() {
 
         {/* ── Retro monitor ── */}
         <div className="board-monitor-wrap" style={{ flex: 1, display: "flex" }}>
-          <RetroMonitor src={monitorSrc} />
+          <RetroMonitor />
         </div>
       </div>{/* end bottom row */}
 
